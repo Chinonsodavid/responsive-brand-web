@@ -1,19 +1,5 @@
-let icon = document.getElementById("icon");
+
 let nav = document.getElementById("navlist");
-let icon2 = document.getElementById("filter");
-let naver = document.getElementById("navlister");
-let closed = document.getElementById("close");
-
-icon.onclick = () => {
-  nav.classList.add("open");
-};
-closed.onclick = () => {
-  nav.classList.remove("open");
-};
-
-// icon2.onclick = () => {
-//   naver.classList.toggle("opens");
-// };
 
 const scrollHeader = () => {
   const header = document.getElementById("header");
@@ -23,3 +9,10 @@ const scrollHeader = () => {
     : header.classList.remove("scroll-header");
 };
 window.addEventListener("scroll", scrollHeader);
+
+let mine = document.getElementById("btn");
+mine.onclick = () => {
+  nav.classList.toggle("open");
+  document.querySelector(".middle").classList.toggle("openmid");
+  document.querySelector(".bottom").classList.toggle("openbot");
+};

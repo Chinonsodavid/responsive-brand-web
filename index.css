@@ -74,7 +74,7 @@ nav .fa {
   font-size: 1.5em;
   z-index: 200;
 }
-nav .fa-bars {
+ #btn {
   display: none;
 }
 
@@ -350,7 +350,14 @@ footer {
   height: 30px;
   margin-top: 10px;
 }
-
+.nav {
+  width: 300px;
+  height: 300px;
+  background-color: blue;
+  /* border-start-end-radius: 100px; */
+  border-end-start-radius: 20rem;
+  /* transform: translateY(-108%); */
+}
 /* RESPONSIVENESS */
 
 @media only screen and (max-width: 807px) {
@@ -362,33 +369,59 @@ footer {
     background-color: rgb(164, 160, 160);
     justify-content: center;
     gap: 40px;
-    right: 0;
+    right:-100%;
     top: 0;
     height: 100%;
-    width: 0px;
+    width: 100%;
     transition: 0.36s ease;
   }
   nav ul li::after {
     display: none;
   }
   .open {
-    width: 200px;
+  right: 0;
   }
-  nav ul .fa-times{
-    display: block;
-    position: absolute;
-    top: 2%;
-    right: 16%;
-    /* font-size: 1.5em; */
+  #btn {
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    height: 27px;
+    width: 35px;
     cursor: pointer;
-    
+    z-index: 100000;
   }
+  
+  #btn span {
+    background: black;
+    border: none;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+  
+  #btn .middle {
+    transition: 0.4s;
+  }
+  
+  #btn .bottom {
+    top: 11px;
+    transition: 0.4s;
+  }
+  .openbot {
+    transform: translateX(0) rotate(45deg);
+  }
+  .openmid {
+    transform: translateY(11px) translateX(0px) rotate(-45deg);
+  }
+  
   nav .fa-search {
     display: none;
   }
-  nav .fa-bars {
+  nav #btn {
     display: block;
-    font-size: 1.7em;
     cursor: pointer;
   }
   .exclusive {
